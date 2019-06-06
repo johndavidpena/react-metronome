@@ -1,3 +1,4 @@
+// https://github.com/francoischalifour/react-metronome/blob/master/demo/src/App.js
 import React, { Component } from 'react';
 import sliderStyles from './slider.module.css';
 

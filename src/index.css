@@ -43,15 +43,16 @@
   --spacing-2: 0.5rem;
   --spacing-1: 0.25rem;
 
-  --sizing-9: 96rem;
-  --sizing-8: 64rem;
-  --sizing-7: 48rem;
-  --sizing-6: 32rem;
-  --sizing-5: 16rem;
-  --sizing-4: 8rem;
-  --sizing-3: 4rem;
-  --sizing-2: 2rem;
-  --sizing-1: 1rem;
+  --size-96: 96rem;
+  --size-64: 64rem;
+  --size-48: 48rem;
+  --size-32: 32rem;
+  --size-24: 24rem;
+  --size-16: 16rem;
+  --size-8: 8rem;
+  --size-4: 4rem;
+  --size-2: 2rem;
+  --size-1: 1rem;
 
   --border-radius-none: 0;
   --border-radius-1: 0.125rem;

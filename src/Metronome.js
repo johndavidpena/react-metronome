@@ -20,6 +20,8 @@ import {
 class Metronome extends Component {
   static propTypes = {
     tempo: PropTypes.number,
+    bulletPos: PropTypes.number,
+    bulletLeft: PropTypes.string,
     beatsPerMeasure: PropTypes.number,
     subdivision: PropTypes.number,
     autoplay: PropTypes.bool,
@@ -36,6 +38,8 @@ class Metronome extends Component {
 
   static defaultProps = {
     tempo: 120,
+    bulletPos: 0.375,
+    bulletLeft: '216.75px',
     beatsPerMeasure: 4,
     subdivision: 1,
     beatFrequency: 880,
@@ -276,6 +280,8 @@ class Metronome extends Component {
 
     this.setState({
       tempo,
+      bulletPos: (tempo - 60) / 160,
+      bulletLeft: `${this.state.bulletPos * 578}px`,
     });
   }
 

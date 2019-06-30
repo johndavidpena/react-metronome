@@ -1,51 +1,61 @@
 import React from 'react';
 import Metronome from './Metronome';
-import Slider from './Slider';
+import metronomeStyles from './metronome.module.css';
+import sliderStyles from './slider.module.css';
+
+import { IoMdPlay } from 'react-icons/io';
+import { IoMdPause } from 'react-icons/io';
 
 const App = () => (
-  <React.Fragment>
+  <Metronome
+    tempo={120}
+    render={({
+      tempo,
+      bulletLeft,
+      beatsPerMeasure,
+      playing,
+      beat,
+      onPlay,
+      onTempoChange,
+    }) => (
+        <div className={metronomeStyles.metronome}>
+          {/* <div>
+            {tempo} <small>BPM</small>
+          </div>
+          <div>
+            {beatsPerMeasure}/{beatsPerMeasure} <small>T.S.</small>
+          </div> */}
 
-    <Slider />
+          <div className={sliderStyles.container}>
+            <div className={sliderStyles.rangeSlider}>
+              <span
+                className={sliderStyles.rsLabel}
+                style={{ left: `${bulletLeft}` }}
+              >{tempo}</span>
 
-    <Metronome
-      tempo={120}
-      render={({
-        tempo,
-        beatsPerMeasure,
-        playing,
-        beat,
-        onPlay,
-        onTempoChange,
-      }) => (
-          <React.Fragment>
-            <div>
-              {tempo} <small>BPM</small>
-            </div>
-            <div>
-              {beatsPerMeasure}/{beatsPerMeasure} <small>T.S.</small>
-            </div>
-
-            <div>
               <input
-                type="range"
-                min={40}
-                max={240}
-                value={tempo}
                 onChange={event => onTempoChange(event.target.value)}
-              />
-
-              <span>
-                {beat}/{beatsPerMeasure}
-              </span>
-
-              <button onClick={onPlay}>
-                {playing ? 'Pause' : 'Play'}
-              </button>
+                className={sliderStyles.rsRange}
+                type="range"
+                value={tempo}
+                min={60} max={220} />
             </div>
-          </React.Fragment>
-        )}
-    />
-  </React.Fragment>
+
+            <div className={sliderStyles.boxMinmax}>
+              <span>60</span><span>220</span>
+            </div>
+          </div>
+
+          <div className={metronomeStyles.bottom}>
+            {playing ? <IoMdPause onClick={onPlay} /> : <IoMdPlay onClick={onPlay} />}
+
+            <span className={metronomeStyles.beat}>
+              {beat}/{beatsPerMeasure}
+            </span>
+          </div>
+        </div>
+      )}
+  />
 );
 
 export default App;

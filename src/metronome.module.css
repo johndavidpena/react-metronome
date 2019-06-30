@@ -1,0 +1,24 @@
+.metronome {
+  min-height: 100vh;
+
+  background: var(--blue-grey-600);
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+svg {
+  width: var(--size-8);
+  height: var(--size-8);
+  color: var(--cyan-vivid-300);
+  margin-bottom: var(--size-2);
+}
+
+.beat {
+  color: var(--off-white);
+  font-size: var(--font-size-5);
+}

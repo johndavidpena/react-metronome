@@ -1,7 +1,7 @@
 .metronome {
   min-height: 100vh;
 
-  background: var(--blue-grey-600);
+  background: var(--blue-grey-400);
 }
 
 .bottom {
@@ -14,7 +14,7 @@
 svg {
   width: var(--size-8);
   height: var(--size-8);
-  color: var(--cyan-vivid-300);
+  color: var(--blue-grey-600);
   margin-bottom: var(--size-2);
 }
 
